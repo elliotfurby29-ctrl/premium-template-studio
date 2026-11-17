@@ -1,0 +1,58 @@
+:root {
+  color-scheme: light;
+  --ink: #182732;
+  --muted: #42505a;
+  --paper: #fcfaf6;
+  --line: #ded8cf;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 24px; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.6 Arial, sans-serif;
+}
+a { color: inherit; text-underline-offset: .28em; }
+a:focus-visible { outline: 2px solid #305772; outline-offset: 5px; }
+.masthead, main, footer {
+  width: min(calc(100% - 56px), 1250px);
+  margin-inline: auto;
+}
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  column-gap: 28px;
+  row-gap: 8px;
+  padding-block: 26px;
+  border-bottom: 1px solid var(--line);
+}
+.wordmark { font-weight: 700; text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 14px; }
+.intro {
+  display: grid;
+  grid-template-columns: 1fr minmax(230px, .62fr);
+  align-items: end;
+  gap: 24px 60px;
+  padding: clamp(46px, 8vw, 110px) 0 clamp(46px, 7vw, 86px);
+}
+h1, h2 { margin: 0; font: normal 1em/1.03 Georgia, serif; }
+h1 { font-size: clamp(52px, 8.7vw, 106px); letter-spacing: -.059em; }
+h2 { font-size: clamp(35px, 4.6vw, 58px); letter-spacing: -.041em; }
+p { margin: 0; color: var(--muted); max-width: 52ch; }
+.intro p { font-size: clamp(16px, 1.55vw, 20px); padding-bottom: 4px; }
+section { border-top: 1px solid var(--line); padding: 36px 0 54px; }
+.section-title { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 26px; margin-bottom: 24px; }
+.gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.gallery a { display: block; border: 1px solid var(--line); }
+.gallery a:hover { border-color: #72828a; }
+img { display: block; width: 100%; height: auto; }
+footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; padding: 24px 0 35px; }
+@media (max-width: 700px) {
+  .masthead, main, footer { width: calc(100% - 32px); }
+  .intro { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .gallery a:first-child { grid-column: 1 / -1; }
+}
